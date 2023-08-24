@@ -1,0 +1,884 @@
+{
+  "data": {
+    "Form2": {
+      "properties": {
+        "ddl": {
+          "name": "Form2"
+        },
+        "text": {
+          "tr-TR": "Form2",
+          "en-US": "Form2",
+          "ru-RU": "Form2",
+          "az-Latn-AZ": "Form2"
+        },
+        "caption": {
+          "text": {
+            "tr-TR": "Form2",
+            "en-US": "Form2",
+            "ru-RU": "Form2",
+            "az-Latn-AZ": "Form2"
+          }
+        },
+        "toolbarButtons": [
+          {
+            "key": "toolbarSaveButton",
+            "name": "Kaydet",
+            "icon": "save",
+            "enabled": true,
+            "caption": {
+              "tr-TR": "Kaydet",
+              "en-US": "Save",
+              "ru-RU": "Сохранять",
+              "az-Latn-AZ": "Yadda Saxla"
+            },
+            "validate": false
+          },
+          {
+            "key": "toolbarSaveAsButton",
+            "name": "Farklı Kaydet",
+            "icon": "save-as",
+            "enabled": false,
+            "caption": {
+              "tr-TR": "Farklı Kaydet",
+              "en-US": "Save As",
+              "ru-RU": "Сохранить как",
+              "az-Latn-AZ": "Fərqli Saxla"
+            },
+            "validate": false
+          }
+        ],
+        "name": "Form2",
+        "controlId": "4568db41-39cf-4dd1-9c1c-dbc68fff0431",
+        "controlType": "Form"
+      },
+      "viewProperties": {},
+      "id": "Form2",
+      "type": "Form"
+    },
+    "CbDepartment": {
+      "properties": {
+        "dataFields": [
+          {
+            "name": "ID",
+            "type": "number"
+          },
+          {
+            "name": "DESCRIPTION",
+            "type": "string"
+          }
+        ],
+        "dataSource": {
+          "fileId": "<DataSource-getDepartments>",
+          "displayExpr": [
+            "DESCRIPTION"
+          ],
+          "valueExpr": "ID",
+          "name": "getDepartments",
+          "connectionType": 1,
+          "displayFormat": "{{ DESCRIPTION }}"
+        },
+        "caption": {
+          "text": {
+            "tr-TR": "CbDepartment"
+          }
+        },
+        "name": "CbDepartment",
+        "ddl": {
+          "name": "CbDepartment"
+        },
+        "iconExpr": "",
+        "commitId": 12,
+        "controlType": "ComboBox",
+        "controlId": "ebe37326-1677-7367-40f6-cf7a441cc625"
+      },
+      "viewProperties": {},
+      "id": "CbDepartment",
+      "type": "ComboBox"
+    },
+    "CbSubDepartments": {
+      "properties": {
+        "dataFields": [
+          {
+            "name": "ID",
+            "type": "number"
+          },
+          {
+            "name": "Tanım",
+            "type": "string"
+          }
+        ],
+        "dataSource": {
+          "fileId": "<DataSource-getSubDepartments>",
+          "displayExpr": [
+            "NAME"
+          ],
+          "valueExpr": "ID",
+          "name": "getSubDepartments",
+          "parameters": [
+            {
+              "name": "MANDEP",
+              "length": 255,
+              "valueType": "integer",
+              "isRequired": true,
+              "valueModifier": "fieldSelection",
+              "value": 0,
+              "field": "CbDepartment.selectedItem.field.ID",
+              "subType": null
+            }
+          ],
+          "connectionType": 1,
+          "displayFormat": "{{ NAME }}"
+        },
+        "caption": {
+          "text": {
+            "tr-TR": "CbSubDepartments"
+          }
+        },
+        "name": "CbSubDepartments",
+        "ddl": {
+          "name": "CbSubDepartments"
+        },
+        "iconExpr": "",
+        "commitId": 15,
+        "controlType": "ComboBox",
+        "controlId": "6dafc716-ce10-2885-cb46-80d0fa2a43a7"
+      },
+      "viewProperties": {},
+      "id": "CbSubDepartments",
+      "type": "ComboBox"
+    },
+    "TxtDetay": {
+      "properties": {
+        "caption": {
+          "text": {
+            "tr-TR": "TxtDetay"
+          }
+        },
+        "name": "TxtDetay",
+        "ddl": {
+          "name": "TxtDetay"
+        },
+        "commitId": 4,
+        "controlId": "84860e50-c542-2352-c44a-9f0b54777caa",
+        "controlType": "TextBox"
+      },
+      "viewProperties": {},
+      "id": "TxtDetay",
+      "type": "TextBox"
+    },
+    "ModalDataGrid1": {
+      "properties": {
+        "dataSource": {
+          "connectionType": null,
+          "fileId": null,
+          "displayExpr": [],
+          "valueExpr": null,
+          "displayFormat": null,
+          "field": null
+        },
+        "caption": {
+          "text": {
+            "tr-TR": "ModalDataGrid1"
+          }
+        },
+        "name": "ModalDataGrid1",
+        "ddl": {
+          "name": "ModalDataGrid1"
+        },
+        "commitId": 23,
+        "controlType": "DataGrid",
+        "editing": {
+          "showAddCommand": true,
+          "showDeleteCommand": true,
+          "showEditCommand": true
+        },
+        "controlId": "9941417f-4eaa-f852-a1ee-88ecf2bd6c3b",
+        "columns": [
+          {
+            "name": "ModalDgId",
+            "caption": {
+              "tr-TR": "ModalDgId"
+            },
+            "width": 100,
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": false,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": true,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "name": "NewColumn1",
+              "controlId": "NewColumn1",
+              "controlType": "NumberBox",
+              "visible": true,
+              "clientVisible": true,
+              "enabled": true,
+              "clientEnabled": true,
+              "style": {
+                "backgroundColor": ""
+              },
+              "containerStyle": {},
+              "customClassName": "",
+              "caption": {
+                "ellipsis": true,
+                "font": {
+                  "bold": false,
+                  "color": "#25241f",
+                  "family": "Source Sans Pro, sans-serif",
+                  "italic": false,
+                  "size": "13",
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "position": "left",
+                "text": {},
+                "visible": true,
+                "size": {
+                  "width": 120
+                },
+                "horizontalAlign": "left",
+                "verticalAlign": "middle",
+                "showColon": false,
+                "markSettings": {
+                  "char": null,
+                  "position": "atFirst",
+                  "style": {}
+                }
+              },
+              "designerProps": {
+                "selected": false,
+                "allowAutoClear": true
+              },
+              "readOnly": false,
+              "ddl": {
+                "name": "ModalDgId",
+                "allowNull": true,
+                "type": "Decimal",
+                "size": 19,
+                "precision": 5
+              },
+              "text": "",
+              "placeholder": {},
+              "textAlign": "right",
+              "max": 99999999999999,
+              "step": 1,
+              "precision": 0,
+              "useThousandSeparator": false,
+              "maxLength": 19,
+              "EntityPath": "ModalDgId"
+            },
+            "defaultValue": null,
+            "isPrimaryKey": true,
+            "autoIncrement": true,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "",
+              "text": {},
+              "title": {},
+              "icon": "search",
+              "typeName": "CreateFormArgs",
+              "args": {
+                "typeName": "CreateFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "panel",
+                "closeCurrentPanel": false,
+                "parameters": []
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "decimal",
+              "columnName": "ModalDgId"
+            },
+            "formatType": {
+              "format": "",
+              "type": "label"
+            },
+            "editType": "numberBox",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "key": "0"
+          },
+          {
+            "name": "ModalDgAciklama",
+            "caption": {
+              "tr-TR": "ModalDgAciklama"
+            },
+            "width": 100,
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": true,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": true,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "name": "NewColumn1",
+              "controlId": "NewColumn1",
+              "controlType": "TextBox",
+              "visible": true,
+              "clientVisible": true,
+              "enabled": true,
+              "clientEnabled": true,
+              "style": {
+                "backgroundColor": ""
+              },
+              "containerStyle": {},
+              "customClassName": "",
+              "caption": {
+                "ellipsis": true,
+                "font": {
+                  "bold": false,
+                  "color": "#25241f",
+                  "family": "Source Sans Pro, sans-serif",
+                  "italic": false,
+                  "size": "13",
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "position": "left",
+                "text": {},
+                "visible": true,
+                "size": {
+                  "width": 120
+                },
+                "horizontalAlign": "left",
+                "verticalAlign": "middle",
+                "showColon": false,
+                "markSettings": {
+                  "char": null,
+                  "position": "atFirst",
+                  "style": {}
+                }
+              },
+              "designerProps": {
+                "selected": false,
+                "allowAutoClear": true
+              },
+              "readOnly": false,
+              "ddl": {
+                "name": "ModalDgAciklama",
+                "allowNull": true,
+                "size": 50,
+                "type": "String"
+              },
+              "text": "",
+              "placeholder": {},
+              "textAlign": "left",
+              "maxLength": 50,
+              "isSecretData": false,
+              "enableMultiLanguageText": false,
+              "multiLanguageText": {},
+              "showCharacterCounter": false,
+              "EntityPath": "ModalDgAciklama"
+            },
+            "defaultValue": null,
+            "isPrimaryKey": false,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "",
+              "text": {},
+              "title": {},
+              "icon": "search",
+              "typeName": "CreateFormArgs",
+              "args": {
+                "typeName": "CreateFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "panel",
+                "closeCurrentPanel": false,
+                "parameters": []
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "string",
+              "columnName": "ModalDgAciklama"
+            },
+            "formatType": {
+              "format": "",
+              "type": "label"
+            },
+            "editType": "textBox",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "key": "1"
+          },
+          {
+            "name": "ComboUsers",
+            "caption": {
+              "tr-TR": "ComboUsers"
+            },
+            "width": 100,
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": true,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": true,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "name": "NewColumn1",
+              "controlId": "NewColumn1",
+              "controlType": "ComboBox",
+              "visible": true,
+              "clientVisible": true,
+              "enabled": true,
+              "clientEnabled": true,
+              "style": {
+                "backgroundColor": ""
+              },
+              "containerStyle": {},
+              "customClassName": "",
+              "caption": {
+                "ellipsis": true,
+                "font": {
+                  "bold": false,
+                  "color": "#25241f",
+                  "family": "Source Sans Pro, sans-serif",
+                  "italic": false,
+                  "size": "13",
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "position": "left",
+                "text": {},
+                "visible": true,
+                "size": {
+                  "width": 120
+                },
+                "horizontalAlign": "left",
+                "verticalAlign": "middle",
+                "showColon": false,
+                "markSettings": {
+                  "char": null,
+                  "position": "atFirst",
+                  "style": {}
+                }
+              },
+              "designerProps": {
+                "selected": false,
+                "allowAutoClear": true
+              },
+              "readOnly": false,
+              "ddl": {
+                "name": "ComboUsers"
+              },
+              "text": "",
+              "items": [],
+              "dataSource": {
+                "fileId": "348",
+                "displayExpr": [
+                  "FULLNAME"
+                ],
+                "valueExpr": "ID",
+                "name": "getUSER",
+                "runAtServer": false,
+                "parameters": [],
+                "connectionType": 1,
+                "displayFormat": "{{ FULLNAME }} "
+              },
+              "valueType": "string",
+              "dataSourceType": "dynamic",
+              "decimalValuePrecision": 0,
+              "dateValueFormat": "",
+              "iconExpr": null,
+              "iconMatchers": [],
+              "allowClear": true,
+              "EntityPath": "ComboUsers"
+            },
+            "defaultValue": null,
+            "isPrimaryKey": false,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "",
+              "text": {},
+              "title": {},
+              "icon": "search",
+              "typeName": "CreateFormArgs",
+              "args": {
+                "typeName": "CreateFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "panel",
+                "closeCurrentPanel": false,
+                "parameters": []
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "object",
+              "columnName": "ComboUsers"
+            },
+            "formatType": {
+              "format": "",
+              "type": "label"
+            },
+            "editType": "comboBox",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "key": "2"
+          },
+          {
+            "name": "ComboProjectss",
+            "caption": {
+              "tr-TR": "ComboProjectss"
+            },
+            "width": 100,
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": true,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": true,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "name": "NewColumn1",
+              "controlId": "NewColumn1",
+              "controlType": "ComboBox",
+              "visible": true,
+              "clientVisible": true,
+              "enabled": true,
+              "clientEnabled": true,
+              "style": {
+                "backgroundColor": ""
+              },
+              "containerStyle": {},
+              "customClassName": "",
+              "caption": {
+                "ellipsis": true,
+                "font": {
+                  "bold": false,
+                  "color": "#25241f",
+                  "family": "Source Sans Pro, sans-serif",
+                  "italic": false,
+                  "size": "13",
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "position": "left",
+                "text": {},
+                "visible": true,
+                "size": {
+                  "width": 120
+                },
+                "horizontalAlign": "left",
+                "verticalAlign": "middle",
+                "showColon": false,
+                "markSettings": {
+                  "char": null,
+                  "position": "atFirst",
+                  "style": {}
+                }
+              },
+              "designerProps": {
+                "selected": false,
+                "allowAutoClear": true
+              },
+              "readOnly": false,
+              "ddl": {
+                "name": "ComboProjectss"
+              },
+              "text": "",
+              "items": [],
+              "dataSource": {
+                "fileId": "351",
+                "displayExpr": [
+                  "Proje Ad"
+                ],
+                "valueExpr": "ID",
+                "name": "getProjects",
+                "runAtServer": false,
+                "parameters": [
+                  {
+                    "name": "CPP",
+                    "length": 255,
+                    "valueType": "string",
+                    "isRequired": true,
+                    "valueModifier": "fieldSelection",
+                    "value": null,
+                    "field": "ModalDataGrid1.columns.ComboUsers.data.ID",
+                    "subType": null
+                  }
+                ],
+                "connectionType": 1,
+                "displayFormat": "{{ Proje Ad }} "
+              },
+              "valueType": "string",
+              "dataSourceType": "dynamic",
+              "decimalValuePrecision": 0,
+              "dateValueFormat": "",
+              "iconExpr": null,
+              "iconMatchers": [],
+              "allowClear": true,
+              "EntityPath": "ComboProjectss"
+            },
+            "defaultValue": null,
+            "isPrimaryKey": false,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "",
+              "text": {},
+              "title": {},
+              "icon": "search",
+              "typeName": "CreateFormArgs",
+              "args": {
+                "typeName": "CreateFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "panel",
+                "closeCurrentPanel": false,
+                "parameters": []
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "object",
+              "columnName": "ComboProjectss"
+            },
+            "formatType": {
+              "format": "",
+              "type": "label"
+            },
+            "editType": "comboBox",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "key": "3"
+          }
+        ]
+      },
+      "viewProperties": {},
+      "id": "ModalDataGrid1",
+      "type": "DataGrid"
+    }
+  },
+  "views": {
+    "default": {
+      "entities": {
+        "items": {
+          "Form2": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": null,
+            "items": [
+              "Section1"
+            ],
+            "id": "Form2",
+            "type": "Form"
+          },
+          "Section1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Form2",
+            "items": [
+              "Column1"
+            ],
+            "id": "Section1",
+            "type": "Section"
+          },
+          "Column1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section1",
+            "items": [
+              "CbDepartment",
+              "CbSubDepartments",
+              "TxtDetay",
+              "ModalDataGrid1"
+            ],
+            "id": "Column1",
+            "type": "Column"
+          },
+          "CbDepartment": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "CbDepartment",
+            "type": "ComboBox"
+          },
+          "CbSubDepartments": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "CbSubDepartments",
+            "type": "ComboBox"
+          },
+          "TxtDetay": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "TxtDetay",
+            "type": "TextBox"
+          },
+          "ModalDataGrid1": {
+            "designerProps": {
+              "selected": true,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "ModalDataGrid1",
+            "type": "DataGrid"
+          }
+        },
+        "ghostItems": {}
+      },
+      "result": [
+        "Form2"
+      ],
+      "description": null
+    }
+  },
+  "activeView": "default",
+  "version": 10
+}

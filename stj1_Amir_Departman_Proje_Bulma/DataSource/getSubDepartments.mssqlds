@@ -1,0 +1,48 @@
+{
+  "name": "getSubDepartments",
+  "connectionId": "c914bb72-a9c0-43a9-b1a4-4bf5dfae6f4d",
+  "connectionName": {
+    "tr-TR": "SYNERGY"
+  },
+  "connectionType": 1,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "commandText": "SELECT ID,DESCRIPTION AS NAME\r\nFROM OSDEPARTMENTS OS\r\nWHERE OS.MANAGERDEPARTMENT={{MANDEP}}",
+    "parameters": [
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "MANDEP",
+        "value": 0,
+        "valueType": 3,
+        "length": 255,
+        "subType": null
+      }
+    ],
+    "commandType": 1,
+    "executionType": 3
+  },
+  "structure": {
+    "columns": [
+      {
+        "name": "ID",
+        "type": 3,
+        "caption": "ID",
+        "columns": []
+      },
+      {
+        "name": "NAME",
+        "type": 1,
+        "caption": "NAME",
+        "columns": []
+      }
+    ],
+    "returnType": 10
+  }
+}

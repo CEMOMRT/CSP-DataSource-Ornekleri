@@ -1,0 +1,37 @@
+{
+  "name": "getAmirler",
+  "connectionId": "c914bb72-a9c0-43a9-b1a4-4bf5dfae6f4d",
+  "connectionName": {
+    "tr-TR": "SYNERGY"
+  },
+  "connectionType": 1,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "commandText": "SELECT DISTINCT OU.ID,FIRSTNAME+' '+LASTNAME AS FULLNAME\r\nFROM OSUSERS OU\r\nINNER JOIN OSMANAGERS ON OU.ID =OSMANAGERS.MANAGERUSERID\r\nWHERE OU.STATUS = 1",
+    "parameters": [],
+    "commandType": 1,
+    "executionType": 3
+  },
+  "structure": {
+    "columns": [
+      {
+        "name": "ID",
+        "type": 3,
+        "caption": "ID",
+        "columns": []
+      },
+      {
+        "name": "FULLNAME",
+        "type": 1,
+        "caption": "FULLNAME",
+        "columns": []
+      }
+    ],
+    "returnType": 10
+  }
+}

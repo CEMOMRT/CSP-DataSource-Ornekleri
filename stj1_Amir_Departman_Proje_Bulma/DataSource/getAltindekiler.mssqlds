@@ -1,0 +1,48 @@
+{
+  "name": "getAltindekiler",
+  "connectionId": "c914bb72-a9c0-43a9-b1a4-4bf5dfae6f4d",
+  "connectionName": {
+    "tr-TR": "SYNERGY"
+  },
+  "connectionType": 1,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "commandText": "SELECT OS.ID,FIRSTNAME+' '+LASTNAME AS FULLNAME\r\nFROM OSUSERS OS \r\nINNER JOIN OSMANAGERS ON OS.ID = OSMANAGERS.USERID\r\nWHERE MANAGERUSERID={{MANGID}}",
+    "parameters": [
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "MANGID",
+        "value": 2,
+        "valueType": 3,
+        "length": 255,
+        "subType": null
+      }
+    ],
+    "commandType": 1,
+    "executionType": 3
+  },
+  "structure": {
+    "columns": [
+      {
+        "name": "ID",
+        "type": 3,
+        "caption": "ID",
+        "columns": []
+      },
+      {
+        "name": "FULLNAME",
+        "type": 1,
+        "caption": "FULLNAME",
+        "columns": []
+      }
+    ],
+    "returnType": 10
+  }
+}
